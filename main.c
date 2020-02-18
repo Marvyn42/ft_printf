@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 15:21:05 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/18 15:40:59 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/18 16:48:40 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ int		ft_printf(const char *str, ...)
 		data_init(&data);
 		if (str[i] == '%')
 		{
-			i++;
-			struct_filling(&data, &str[i], ap);
+			struct_filling(&data, &str[++i], ap);
 			while (is_flag(str[i]))
 				i++;
 		}
