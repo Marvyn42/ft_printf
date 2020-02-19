@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 15:05:10 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/14 10:54:38 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/19 17:03:24 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	check_width(t_liste *data, const char **str, va_list ap)
 		(void)ap;
 		data->width = ft_atoi(str2);
 		tmp = ft_strlen(ft_itoa(data->width));
+		if (str2[i] == '0')
+			tmp++;
 		*str = ((str2) + tmp);
 	}
 	else if (str2[i] == '*')

@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 11:33:30 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/18 15:30:25 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/19 15:03:37 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,8 @@ void	print_char(va_list ap, char type, t_liste *data)
 {
 	char	c;
 
-	if (type == '%')
-		c = '%';
-	else
-		c = va_arg(ap, int);
 	(void)type;
+	c = va_arg(ap, int);
 	nb_char(data, 1);
 	if (data->f_less)
 	{

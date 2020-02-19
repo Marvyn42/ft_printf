@@ -6,18 +6,21 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:15:28 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/18 15:32:52 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/19 17:34:05 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	nb_char(t_liste *data, int len)
+char	*init_str(va_list ap)
 {
-	if (data->width >= len)
-		data->str_len += data->width;
+	char *str;
+
+	if (!(str = va_arg(ap, char *)))
+		str = "(null)";
 	else
-		data->str_len += len;
+		str = va_arg(ap, char *);
+	return (str);
 }
 
 void	print_str(va_list ap, char type, t_liste *data)
@@ -26,7 +29,7 @@ void	print_str(va_list ap, char type, t_liste *data)
 	int		tmp;
 
 	(void)type;
-	str = va_arg(ap, char *);
+	str = init_str(ap);
 	if (data->pre_on_off && (unsigned)data->prec < ft_strlen(str))
 		tmp = data->prec;
 	else

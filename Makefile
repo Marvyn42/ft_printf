@@ -8,6 +8,7 @@ SRC			=	main.c \
 				conversion/print_nb.c \
 				conversion/print_str.c \
 				conversion/print_uin.c \
+				conversion/print_mod.c \
 
 
 HEADERS		= 	ft_print.h

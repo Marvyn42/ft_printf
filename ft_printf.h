@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 13:15:18 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/18 15:29:58 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/19 16:23:00 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ void				print_char(va_list ap, char type, t_liste *data);
 void				print_nb(va_list ap, char type, t_liste *data);
 void				print_uin(va_list ap, char type, t_liste *data);
 void				print_add(va_list ap, char type, t_liste *data);
+void				print_mod(va_list ap, char type, t_liste *data);
 
 #endif

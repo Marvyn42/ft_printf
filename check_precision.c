@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 16:58:42 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/14 10:11:01 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/19 17:03:27 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ void	check_prec(t_liste *data, const char **str, va_list ap)
 		data->pre_on_off = 1;
 		str2++;
 		*str = str2;
-		if (str2[i] == '0' || ft_atoi(str2) != 0)
+		if ((data->prec = ft_atoi(str2)))
 		{
-			data->prec = ft_atoi(str2);
 			tmp = ft_strlen(ft_itoa(data->prec));
+			if (str2[i] == '0')
+				tmp += 1;
 			*str = ((str2) + tmp);
 		}
 		else if (str2[i] == '*')

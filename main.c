@@ -6,11 +6,19 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 15:21:05 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/18 16:48:40 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/19 17:05:21 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	nb_char(t_liste *data, int len)
+{
+	if (data->width >= len)
+		data->str_len += data->width;
+	else
+		data->str_len += len;
+}
 
 void	data_init(t_liste *data)
 {
@@ -24,8 +32,8 @@ void	data_init(t_liste *data)
 int		is_flag(char flag)
 {
 	if (flag != '%' && flag != 'c' && flag != 's' &&
-		flag != 'p' && flag != 'd' && flag != 'i' && flag != 'u' &&
-		flag != 'x' && flag != 'X')
+			flag != 'p' && flag != 'd' && flag != 'i' && flag != 'u' &&
+			flag != 'x' && flag != 'X')
 		return (1);
 	else
 		return (0);
