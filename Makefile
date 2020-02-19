@@ -16,7 +16,7 @@ LIB			=	libft.a
 
 OBJS		= 	$(SRC:.c=.o)
 
-NAME		= 	libftprint.a
+NAME		= 	libftprintf.a
 
 CC			=	gcc
 
