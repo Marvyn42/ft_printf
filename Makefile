@@ -9,6 +9,7 @@ SRC			=	main.c \
 				conversion/print_str.c \
 				conversion/print_uin.c \
 				conversion/print_mod.c \
+				conversion/str_precision.c \
 
 
 HEADERS		= 	ft_print.h
@@ -21,7 +22,7 @@ NAME		= 	libftprintf.a
 
 CC			=	gcc
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -g3
 
 RM			=	rm -f
 

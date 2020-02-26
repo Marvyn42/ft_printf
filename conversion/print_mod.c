@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 14:52:58 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/24 16:02:02 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/26 01:50:45 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	width_mod(t_liste *data)
 		while ((data->width-- - 1) != 0)
 			write(1, " ", 1);
 	}
-	else if (data->f_zero == 1 && data->pre_on_off == 0)
+	else if (data->f_zero == 1)
 	{
 		while ((data->width-- - 1) != 0)
 			write(1, "0", 1);

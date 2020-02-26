@@ -6,45 +6,36 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:27:40 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/07 17:58:09 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/25 23:08:22 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_intlen(unsigned int in, int base)
+char	*ft_itoa_base(long value, char *base)
 {
-	int i;
+	int					count;
+	unsigned long		tmp;
+	char				*res;
+	unsigned int		base_length;
 
-	i = 0;
-	while(in)
+	base_length = ft_strlen(base);
+	count = (value < 0) ? 2 : 1;
+	tmp = (value < 0) ? -value : value;
+	while (tmp >= base_length && (tmp /= base_length))
+		++count;
+	tmp = (value < 0) ? -value : value;
+	if (!(res = (char*)malloc(sizeof(char) * (count + 1))))
+		return (NULL);
+	if (value < 0)
+		res[0] = '-';
+	res[count] = 0;
+	while (tmp >= base_length)
 	{
-		in = in/base;
-		i++;
+		--count;
+		res[count] = base[tmp % base_length];
+		tmp /= base_length;
 	}
-	return (i);
-}
-
-char	*ft_itoa_base(int value, int base)
-{
-	unsigned int uin;
-	int tmp;
-	int size;
-	char *res;
-
-	size = (base == 10 && value < 0) ? 1 : 0;
-	uin = size > 0 ? -value : (unsigned int)value;
-	size += ft_intlen(uin, base);
-	res = ft_calloc(size + 1, 1);
-	while (size > 0)
-	{
-		tmp = uin%base;
-		if (tmp > 9)
-			res[--size] = tmp + 87;
-		else
-			res[--size] = tmp + '0';
-		uin = uin/base;
-	}
-	res[0] = (base == 10 && value < 0) ? '-' : res[0];
+	res[--count] = base[tmp % base_length];
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 15:54:00 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/18 14:22:56 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/25 22:46:59 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-char				*ft_itoa_base(int value, int base);
+char				*ft_itoa_base(long value, char *base);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
