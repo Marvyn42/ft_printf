@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 13:53:02 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/26 01:47:16 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/27 11:46:48 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	print_uin(va_list ap, char type, t_liste *data)
 	long			nb;
 	char			*s1;
 
-	nb = va_arg(ap, long);
+	nb = va_arg(ap, unsigned int);
 	if (nb == 0)
 		s1 = "0";
 	else

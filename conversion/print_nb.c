@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 13:53:02 by mamaquig          #+#    #+#             */
-/*   Updated: 2020/02/26 03:00:59 by mamaquig         ###   ########.fr       */
+/*   Updated: 2020/02/27 11:47:09 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ char		*isless(char *s1)
 {
 	char *str;
 
-	str = "-";
-	str = ft_strjoin(str, s1);
+	str = ft_strjoin("-", s1);
 	free(s1);
 	return (str);
 }
@@ -80,7 +79,7 @@ void		print_nb(va_list ap, char type, t_liste *data)
 		type = '-';
 	}
 	s1 = ft_itoa_base(nb, "0123456789");
-	if (data->pre_on_off && (unsigned)data->prec > ft_strlen(s1))
+	if (data->pre_on_off && (unsigned int)data->prec > ft_strlen(s1))
 		s1 = str_precision(data, s1, type);
 	else if (data->pre_on_off && data->prec == 0 && nb == 0 && data->width == 0)
 		return ;
@@ -89,7 +88,7 @@ void		print_nb(va_list ap, char type, t_liste *data)
 	nb_char(data, ft_strlen(s1));
 	if (data->width && data->pre_on_off && data->prec == 0 && nb == 0)
 		width_nb(data, NULL, 0);
-	else if (data->width && (unsigned)data->width > ft_strlen(s1))
+	else if (data->width && (unsigned int)data->width > ft_strlen(s1))
 		width_nb(data, s1, ft_strlen(s1));
 	else
 		write(1, s1, ft_strlen(s1));

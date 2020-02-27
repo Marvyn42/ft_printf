@@ -1,4 +1,4 @@
-SRC			=	main.c \
+SRC			=	ft_printf.c \
 				check_flags.c \
 				check_precision.c \
 				check_type.c \
@@ -22,7 +22,7 @@ NAME		= 	libftprintf.a
 
 CC			=	gcc
 
-CFLAGS		=	-Wall -Wextra -Werror -g3
+CFLAGS		=	-Wall -Wextra -Werror
 
 RM			=	rm -f
 
@@ -38,15 +38,15 @@ $(NAME):	$(LIB) $(OBJS)
 
 $(LIB):
 			@echo	Making libft.a ...
-			@make -C libft re
+			@make -C libft
 
 clean:		
-			@make -C libft clean
+			@make -C libft $@
 			@echo	.o files deleted.
 			@$(RM) $(OBJS)
 
 fclean:		clean
-			@make -C libft fclean
+			@make -C libft $@
 			@echo	.a file deleted.
 			@$(RM) $(NAME)
 
